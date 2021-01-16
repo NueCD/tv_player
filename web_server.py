@@ -48,5 +48,5 @@ def app(environ, start_response):
     return [bytes(response, 'utf-8')]
 
 print('Starting web server.')
-httpd = make_server('', 8000, app)
+httpd = make_server('', 80, app)
 httpd.serve_forever()
