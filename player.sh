@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Working directory.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -29,7 +29,7 @@ while :; do
     # Get first link in queue and play it if there is any.
     VID=$(head -n 1 $QUEUE)
     if [[ "$VID" != "" ]]; then
-        mpv $VID
+        mpv $VID --fs
     
         # Remove the link that was played.
         tail -n +2 $QUEUE > "$QUEUE.tmp" && mv "$QUEUE.tmp" $QUEUE
